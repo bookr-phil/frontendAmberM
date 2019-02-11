@@ -10,26 +10,35 @@ import {
 
 import { connect } from "react-redux";
 
+import {loginAction} from './actions';
+
 
 class App extends Component {
   constructor() {
     super()
 
     this.state = {
-      user: '',
-      pass: ''
+      user: {
+      username: '',
+      password: ''
+      }
     };
 
   }
 
   handleChange = e => {
     this.setState({
-      
+      user: {
       ...this.state,
       [e.target.name]: e.target.value
-    
+      }
     });
   };
+
+  gogoLogin = event => {
+    event.preventDefault();
+    this.props.loginAction(this.state.user);
+  }
 
   render() {
     return (
@@ -41,21 +50,21 @@ class App extends Component {
           </p>
           <div>
 
-          <form onSubmit={this.postSmurf}>
+          <form onSubmit={this.gogoLogin}>
             <input
               type="text"
-              name="user"
+              name="username"
               placeholder="username"
               onChange={this.handleChange}
-              value={this.state.name}
+              value={this.state.user.username}
             />
             <br></br>
             <input
               type="text"
-              name="pass"
+              name="password"
               placeholder="password"
               onChange={this.handleChange}
-              value={this.state.pass}
+              value={this.state.user.password}
             />
             <br></br>
             <button type="submit">
@@ -85,4 +94,4 @@ const mapStoreToProps = state => {
   };
 };
 
-export default connect (mapStoreToProps, { })(App);
+export default connect (mapStoreToProps, { loginAction })(App);

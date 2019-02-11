@@ -7,7 +7,7 @@ export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 
-export const LoginAction = userinfo => dispatch => {
+export const loginAction = userinfo => dispatch => {
     dispatch ({
         type: LOGIN_START
     });
@@ -29,7 +29,7 @@ export const LoginAction = userinfo => dispatch => {
         console.log(err)
         dispatch ({
             type: LOGIN_FAIL,
-            payload: "Login Failed"
+            payload: err.data
         })
     })
 
