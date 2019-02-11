@@ -20,7 +20,7 @@ export const loginAction = userinfo => dispatch => {
         console.log(res)
         dispatch({
             type: LOGIN_SUCCESS,
-            payload: res.data
+            payload: res
         })
     })
 
@@ -29,7 +29,7 @@ export const loginAction = userinfo => dispatch => {
         console.log(err)
         dispatch ({
             type: LOGIN_FAIL,
-            payload: err.data
+            payload: err
         })
     })
 
