@@ -11,6 +11,8 @@ import {
 import { connect } from "react-redux";
 import Login from './components/Login';
 
+import Register from './components/Register';
+
 
 class App extends Component {
   constructor() {
@@ -28,6 +30,8 @@ class App extends Component {
         <header className="App-header">
           
           <Login />
+          <p>OR</p>
+          <Register />
 
          
 
