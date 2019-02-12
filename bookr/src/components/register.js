@@ -110,10 +110,10 @@ render () {
 
 const mapStoreToProps = state => {
     return {
-      user: state.user,
-      error: state.error,
-      LoggingIn: state.LoggingIn,
-      isLoggedIn: state.isLoggedIn
+      user: state.register.user,
+      error: state.register.error,
+      registering: state.register.registering,
+      isRegistered: state.register.isRegistered
     };
   };
   

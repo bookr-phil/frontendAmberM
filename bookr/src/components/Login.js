@@ -73,7 +73,7 @@ render () {
             <button type="submit">
               LOGIN
             </button>
-            <p>Not registered yet?  Please register here:</p>
+            
             
           </form>
 
@@ -92,13 +92,13 @@ render () {
               /> */}
               
 
-            <p>{this.props.isLoggedIn && (
+            <div>{this.props.isLoggedIn && (
               <h2>Hey, you're LOGGED In!</h2>
-            )}</p>
+            )}</div>
 
-            <p>{this.props.isLoggedIn && (
+            <div>{!this.props.isLoggedIn && (
               <h2>Hey, you're NOT logged In!</h2>
-            )}</p>
+            )}</div>
 
           </div>
         </div>
@@ -110,10 +110,10 @@ render () {
 
 const mapStoreToProps = state => {
     return {
-      user: state.user,
-      error: state.error,
-      LoggingIn: state.LoggingIn,
-      isLoggedIn: state.isLoggedIn
+      user: state.login.user,
+      error: state.login.error,
+      LoggingIn: state.login.LoggingIn,
+      isLoggedIn: state.login.isLoggedIn
     };
   };
   
