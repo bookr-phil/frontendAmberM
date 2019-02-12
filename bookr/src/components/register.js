@@ -43,7 +43,7 @@ class Register extends React.Component {
 
 render () {
     return (
-      <div>
+      <div className='App'>
         
           <div>
 

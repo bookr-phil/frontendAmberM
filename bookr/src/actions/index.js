@@ -13,6 +13,10 @@ export const REGIS_START = 'REGIS_START';
 export const REGIS_SUCCESS = 'REGIS_SUCCESS';
 export const REGIS_FAIL = 'REGIS_FAIL';
 
+export const GET_START = 'GET_START';
+export const GET_SUCCESS = 'GET_SUCCESS';
+export const GET_FAIL = 'GET_FAIL';
+
 export const loginAction = userinfo => dispatch => {
     dispatch ({
         type: LOGIN_START
@@ -71,10 +75,28 @@ export const registerAction = userinfo => dispatch => {
 
 }
 
-export const getBooks = dispatch => {
+export const getBooks = () => dispatch => {
+    dispatch({
+        type: GET_START
+    })
+
     demoAPI
+
     .get ('books')
+    
     .then (res => {
         console.log(res)
+        dispatch({
+            type: GET_SUCCESS,
+            payload: res.data
+        })
+    })
+
+    .catch(err => {
+        console.log(err)
+        dispatch({
+            type:GET_FAIL,
+            payload: err.data
+        })
     })
 }

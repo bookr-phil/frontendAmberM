@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 import Login from './components/Login';
 
 import Register from './components/register';
+import BookMain from './components/BooksMain';
 
 
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <div>
           <header>
             
@@ -40,7 +41,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/home" component={Register} />
+          <Route path="/home" component= {BookMain} />
           
         </div>
       </div>
@@ -51,10 +52,8 @@ class App extends Component {
 
 const mapStoreToProps = state => {
   return {
-    user: state.user,
-    error: state.error,
-    LoggingIn: state.LoggingIn,
-    isLoggedIn: state.isLoggedIn
+    user: state.login.user,
+    
   };
 };
 

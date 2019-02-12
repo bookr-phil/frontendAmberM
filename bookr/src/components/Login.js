@@ -42,11 +42,12 @@ class Login extends React.Component {
       gogoLogin = event => {
         event.preventDefault();
         this.props.loginAction(this.state.user);
+        
       }
 
 render () {
     return (
-      <div>
+      <div className="App">
         
           <div>
 
