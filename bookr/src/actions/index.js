@@ -3,8 +3,6 @@ import axios from 'axios';
 
 import {API, demoAPI} from '../api';
 
-
-
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
@@ -16,6 +14,10 @@ export const REGIS_FAIL = 'REGIS_FAIL';
 export const GET_START = 'GET_START';
 export const GET_SUCCESS = 'GET_SUCCESS';
 export const GET_FAIL = 'GET_FAIL';
+
+export const REVIEW_START = 'REVIEW_START';
+export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
+export const REVIEW_FAIL = 'REVIEW_FAIL';
 
 export const loginAction = userinfo => dispatch => {
     dispatch ({
@@ -35,8 +37,7 @@ export const loginAction = userinfo => dispatch => {
         })
        
     })
-
-        
+  
     .catch(err => {
         console.log(err)
         dispatch ({
@@ -96,6 +97,32 @@ export const getBooks = () => dispatch => {
         console.log(err)
         dispatch({
             type:GET_FAIL,
+            payload: err.data
+        })
+    })
+}
+
+export const getReviews = () => dispatch => {
+    dispatch({
+        type: REVIEW_START
+    })
+
+    demoAPI
+
+    .get ('reviews')
+    
+    .then (res => {
+        console.log(res)
+        dispatch({
+            type: REVIEW_SUCCESS,
+            payload: res.data
+        })
+    })
+
+    .catch(err => {
+        console.log(err)
+        dispatch({
+            type: REVIEW_FAIL,
             payload: err.data
         })
     })

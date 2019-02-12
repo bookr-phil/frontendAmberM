@@ -10,6 +10,8 @@ import {
 
 import { connect } from "react-redux";
 
+import {getReviews} from '../actions';
+
 //export const bookInfo = this.props.item;
 
 class BookTile extends React.Component {
@@ -50,4 +52,4 @@ const mapStoreToProps = state => {
     };
   };
   
-  export default connect (mapStoreToProps, { })(BookTile);
+  export default connect (mapStoreToProps, { getReviews })(BookTile);

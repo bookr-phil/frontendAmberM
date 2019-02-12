@@ -11,11 +11,12 @@ import {
 
 import { connect } from "react-redux";
 
-import { getBooks } from './../actions/index';
+import { getBooks, getReviews } from './../actions/index';
 
 function Item (props) {
 
-    props.getBooks();
+    //props.getBooks();
+    
 
     console.log(props.match.params.id);
 
@@ -23,7 +24,7 @@ function Item (props) {
 
     const item = items.find(thing => `${thing.id}` === props.match.params.id);
 
-    console.log(props);
+    console.log(props.reviews);
 
     if (!item) return <h2>No item here... bye, Felicia. </h2>;
 
@@ -38,6 +39,12 @@ function Item (props) {
                 <h5>Published by: {item.publisher}</h5>
                 <p>Summary: {item.summary}</p>
             </div>
+
+            <div>
+                <h3>Reviews</h3>
+
+            </div>
+
           </div>
         )
 }
@@ -47,8 +54,9 @@ const mapStoreToProps = state => {
       user: state.login.user,
       error: state.books.error,
       isLoggedIn: state.isLoggedIn,
-      books: state.books.books
+      books: state.books.books,
+      reviews: state.reviews.reviews
     };
   };
   
-  export default connect (mapStoreToProps, { getBooks })(Item) ;
+  export default connect (mapStoreToProps, { getBooks, getReviews })(Item) ;
