@@ -28,18 +28,18 @@ class BookMain extends React.Component {
             <div>
               <header>
                 <h1>Bookr Header</h1>   
-                
+                <h3>Booklist Goes Here</h3>  
+                <p>--------------------</p>
               </header>
             </div>
 
+            <div className='books'>
+            
             <div>
-            <h3>Booklist Goes Here</h3>  
-            <p>--------------------</p>
-            <ul>
                 {this.props.books.map(item => {
                     return <BookTile item={item} key={item.id} />
                     })}
-            </ul>
+            </div>
             </div>
           </div>
         )

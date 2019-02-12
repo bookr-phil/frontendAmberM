@@ -23,7 +23,10 @@ class BookTile extends React.Component {
         return(
             <div>
             <div className="bookbox">
-              <h3>{this.props.item.title}</h3>
+              <h2>{this.props.item.title}</h2>
+              <h4>By: {this.props.item.author}</h4>
+              <p></p>
+              <h5>{this.props.item.publisher}</h5>
             </div>
           </div>
         )
