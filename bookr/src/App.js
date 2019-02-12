@@ -11,7 +11,7 @@ import {
 import { connect } from "react-redux";
 import Login from './components/Login';
 
-import Register from './components/Register';
+import Register from './components/register';
 
 
 class App extends Component {
@@ -26,21 +26,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          
-          <Login />
-          <p>OR</p>
-          <Register />
-
-         
+      <div>
+        <div>
+          <header>
+            
+            {/* <Login />
+            <p>OR</p>
+            <Register /> */}
 
             
+          </header>
+        </div>
+        <div>
+          <Route exact path="/" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/home" component={Register} />
           
-          
-        </header>
+        </div>
       </div>
     );
+
   }
 }
 

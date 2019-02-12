@@ -73,7 +73,7 @@ render () {
             <button type="submit">
               REGISTER
             </button>
-            <p>Already Registered?  Please go here:</p>
+            
             
           </form>
 

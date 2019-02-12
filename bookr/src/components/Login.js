@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import App from '../App';
+import Register from '../components/register';
+
 import {
     BrowserRouter as Router,
     Route,
@@ -77,19 +80,7 @@ render () {
             
           </form>
 
-          {/* <div className="nav-links">
-                  <NavLink exact to="/">
-                    Home
-                  </NavLink>
-                  <NavLink to="/Shop">Shop</NavLink>
-                </div>
-              
-
-              <Route exact path="/" component={App} />
-              <Route
-                exact path="/Register"
-                render={props => <Register />}
-              /> */}
+          
               
 
             <div>{this.props.isLoggedIn && (
@@ -101,6 +92,9 @@ render () {
             )}</div>
 
           </div>
+
+          
+
         </div>
     );
   
