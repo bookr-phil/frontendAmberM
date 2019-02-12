@@ -12,27 +12,45 @@ import {
 import { connect } from "react-redux";
 
 import { getBooks, getReviews } from './../actions/index';
+import ReviewsList from './ReviewsList';
 
-function Item (props) {
+class Item extends React.Component {
+    constructor(props) {
+        super(props)
 
-    //props.getBooks();
+        this.state ={
+            reviews: props.reviews,
+            
+        }
+
+    }
+    
+    componentDidMount() {
+        this.props.getBooks();
+        this.props.getReviews();
+    }
     
 
-    console.log(props.match.params.id);
+    render(){
 
-    const items = props.books;
+        const items = this.props.books;
 
-    const item = items.find(thing => `${thing.id}` === props.match.params.id);
+        const item = items.find(thing => `${thing.id}` === this.props.match.params.id);
 
-    console.log(props.reviews);
+        const reviews = this.props.reviews;
 
-    if (!item) return <h2>No item here... bye, Felicia. </h2>;
+        const revResult = reviews.filter(rev => rev.books_id === item.id);
 
-    
+        //console.log(this.props.reviews);
+        console.log(revResult);
+        
+        if (!item) return <h2>No item here... bye, Felicia. </h2>;
+
+
         return(
             <div>
             <div >
-                <p>Book Info</p>
+                <p></p>
                 <h2>{item.title}</h2>
                 <h4>Written By: {item.author}</h4>
                 <p></p>
@@ -42,11 +60,14 @@ function Item (props) {
 
             <div>
                 <h3>Reviews</h3>
+                <p>------------------</p>
+                <ReviewsList reviewsey={revResult}/>
 
             </div>
 
           </div>
         )
+    }
 }
 
 const mapStoreToProps = state => {
