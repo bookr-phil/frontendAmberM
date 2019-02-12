@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  NavLink
+  NavLink,
+  withRouter
 } from "react-router-dom";
 
 import { connect } from "react-redux";
@@ -13,17 +14,14 @@ import Login from './components/Login';
 
 import Register from './components/register';
 import BookMain from './components/BooksMain';
+import Item from './components/Item';
 
 
 class App extends Component {
   constructor() {
     super()
 
-    
-
   }
-
-
 
   render() {
     return (
@@ -39,9 +37,11 @@ class App extends Component {
           </header>
         </div>
         <div>
+          
           <Route exact path="/" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/home" component= {BookMain} />
+          <Route exact path="/home" component= {BookMain} />
+          <Route path="/home/:id" component={Item} />
           
         </div>
       </div>
@@ -57,4 +57,4 @@ const mapStoreToProps = state => {
   };
 };
 
-export default connect (mapStoreToProps, { })(App);
+export default withRouter ( connect (mapStoreToProps, { })(App) );

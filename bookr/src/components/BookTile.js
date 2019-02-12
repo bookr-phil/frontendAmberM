@@ -10,28 +10,36 @@ import {
 
 import { connect } from "react-redux";
 
+//export const bookInfo = this.props.item;
 
 class BookTile extends React.Component {
+    
     constructor(props) {
         super(props)
 
+        this.state = {
+            book: this.props.item
+        }
     }
-
-   
 
     render() {
         return(
             <div>
-            <div className="bookbox">
-              <h2>{this.props.item.title}</h2>
-              <h4>By: {this.props.item.author}</h4>
-              <p></p>
-              <h5>{this.props.item.publisher}</h5>
-            </div>
+                <NavLink to={`/home/${this.state.book.id}`}>
+            
+                    <div className="bookbox">
+                    <h2>{this.props.item.title}</h2>
+                    <h4>By: {this.props.item.author}</h4>
+                    <p></p>
+                    <h5>{this.props.item.publisher}</h5>
+                    </div>
+
+                </NavLink>
           </div>
         )
     }
 }
+
 
 const mapStoreToProps = state => {
     return {
