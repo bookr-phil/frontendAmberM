@@ -11,8 +11,9 @@ import {
 
 import { connect } from "react-redux";
 
-import { getBooks, getReviews } from './../actions/index';
+import { getBooks, getReviews, giveReviews } from './../actions/index';
 import ReviewsList from './ReviewsList';
+
 
 class Item extends React.Component {
     constructor(props) {
@@ -20,16 +21,40 @@ class Item extends React.Component {
 
         this.state ={
             reviews: props.reviews,
-            
+            newReview: {
+                review: '',
+                reviewer: 'Me',
+                rating: 0,
+                books_id: this.props.match.params.id
+            }
         }
 
     }
+    
     
     componentDidMount() {
         this.props.getBooks();
         this.props.getReviews();
     }
     
+    goReview = event => {
+        
+        event.preventDefault();
+        
+        this.props.giveReviews(this.state.newReview);
+        
+      }
+
+    handleChange = e => {
+        this.setState({
+          ...this.state,
+          
+          newReview: {
+          ...this.state.newReview,
+          [e.target.name]: e.target.value
+          }
+        });
+      };
 
     render(){
 
@@ -65,6 +90,29 @@ class Item extends React.Component {
 
             </div>
 
+            <div>
+                <form onSubmit={this.goReview}>
+                    <p>
+                    Add New Review
+                    </p>
+
+                    <input
+                    type="text"
+                    name="review"
+                    placeholder="Review This book"
+                    onChange={this.handleChange}
+                    value={this.state.newReview.review}
+                    />
+                    
+                    <br></br>
+                    <button type="submit">
+                    ADD REVIEW
+                    </button>
+                    
+                    
+                </form>
+            </div>
+
           </div>
         )
     }
@@ -80,4 +128,4 @@ const mapStoreToProps = state => {
     };
   };
   
-  export default connect (mapStoreToProps, { getBooks, getReviews })(Item) ;
+  export default connect (mapStoreToProps, { getBooks, getReviews, giveReviews })(Item) ;

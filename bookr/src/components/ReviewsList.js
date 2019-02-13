@@ -19,7 +19,10 @@ class ReviewsList extends React.Component {
         super(props)
 
         this.state ={
-            reviews: props.reviews
+            reviews: this.props.reviewsey,
+            newReview: {
+
+            }
         }
 
     }
@@ -40,14 +43,15 @@ class ReviewsList extends React.Component {
                     {this.props.reviewsey.map(rev => {
                         return <div>
                         <h3>{rev.review}</h3>
-                        <h5>{rev.reviewer}</h5>
+                        <h5>By: {rev.reviewer}</h5>
+                        <h5>Rating: {rev.rating}</h5>
                         <br></br>
                         </div>
                     }) }
                 </div>
 
                 <div>
-                    <h3>New Reviews</h3>
+                    <h3></h3>
                     
 
                 </div>

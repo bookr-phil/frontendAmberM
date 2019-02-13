@@ -19,6 +19,10 @@ export const REVIEW_START = 'REVIEW_START';
 export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
 export const REVIEW_FAIL = 'REVIEW_FAIL';
 
+export const NEWREVIEW_START = 'NEWREVIEW_START';
+export const NEWREVIEW_SUCCESS = 'NEWREVIEW_SUCCESS';
+export const NEWREVIEW_FAIL = 'NEWREVIEW_FAIL';
+
 export const loginAction = userinfo => dispatch => {
     dispatch ({
         type: LOGIN_START
@@ -127,3 +131,31 @@ export const getReviews = () => dispatch => {
         })
     })
 }
+
+
+export const giveReviews = rev => dispatch => {
+    dispatch({
+        type: NEWREVIEW_START
+    })
+
+    demoAPI
+
+    .post ('reviews', rev)
+    
+    .then (res => {
+        console.log(res)
+        dispatch({
+            type: NEWREVIEW_SUCCESS,
+            payload: res.data
+        })
+    })
+
+    .catch(err => {
+        console.log(err)
+        dispatch({
+            type: NEWREVIEW_FAIL,
+            payload: err.data
+        })
+    })
+}
+
