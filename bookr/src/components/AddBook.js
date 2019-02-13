@@ -24,7 +24,7 @@ class Item extends React.Component {
                 title: '',
                 author: '',
                 publisher: '',
-                
+                summary: ""
             }
         }
     }
@@ -90,6 +90,16 @@ class Item extends React.Component {
                         onChange={this.handleChange}
                         value={this.state.newBook.publisher}
                         />
+                        <br></br>
+
+                        <input
+                        type="text"
+                        name="summary"
+                        placeholder="Book Summary"
+                        onChange={this.handleChange}
+                        value={this.state.newBook.summary}
+                        />
+                        <br></br>
                         
                         
                         <br></br>
@@ -102,7 +112,7 @@ class Item extends React.Component {
                 </div>
 
                 <div>
-                    
+
                 </div>
 
           </div>

@@ -9,10 +9,13 @@ import {
   withRouter
 } from "react-router-dom";
 
+//import Modal from 'react-modal';
+
 import { connect } from "react-redux";
 
 import { getBooks, getReviews, giveReviews, killBook } from './../actions/index';
 import ReviewsList from './ReviewsList';
+import Modaley from './Modal';
 
 
 class Item extends React.Component {
@@ -141,6 +144,10 @@ class Item extends React.Component {
                     <button onClick={e => {this.goKillbook()}}>DELETE BOOK</button>
                     <p></p>
                     <p></p>
+                </div>
+
+                <div>
+                    <Modaley itemey={item}/>
                 </div>
 
           </div>

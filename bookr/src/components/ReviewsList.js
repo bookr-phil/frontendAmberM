@@ -20,6 +20,7 @@ class ReviewsList extends React.Component {
 
         this.state ={
             reviews: this.props.reviewsey,
+            reviewRef: this.props.reviews,
             newReview: {
 
             }
@@ -42,7 +43,7 @@ class ReviewsList extends React.Component {
                 <div >
                     {this.props.reviewsey.map(rev => {
                         return <div>
-                        <h3>{rev.review}</h3>
+                        <p>{rev.review}</p>
                         <h5>By: {rev.reviewer}</h5>
                         <h5>Rating: {rev.rating}</h5>
                         <br></br>

@@ -153,7 +153,7 @@ export const giveReviews = rev => dispatch => {
     .then (res => {
         console.log(res)
         dispatch({
-            type: NEWREVIEW_SUCCESS,
+            type: REVIEW_SUCCESS,
             payload: res.data
         })
     })
