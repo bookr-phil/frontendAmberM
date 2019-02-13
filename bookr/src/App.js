@@ -28,7 +28,19 @@ class App extends Component {
       <div>
         <div>
           <header>
-            
+            <div>
+              <nav>
+              <h1 className="base-header">Bookr</h1>
+              <div className="nav-links">
+              <div>
+                  <NavLink exact to="/"> Home </NavLink>
+                  </div>
+                  <div>
+                  <NavLink to="/home"> Books </NavLink>
+                  </div>
+              </div>
+              </nav>
+            </div>
             {/* <Login />
             <p>OR</p>
             <Register /> */}

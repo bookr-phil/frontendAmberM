@@ -38,7 +38,20 @@ nav {
   width: 30%;
 }
 
-.store-header {
+.nav-links a {
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+
+
+.nav-links a.active {
+  border-bottom: 1px solid #1c5d76;
+}
+
+.base-header {
   color: #1c5d76;
 }
 

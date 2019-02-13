@@ -25,20 +25,7 @@ class BookMain extends React.Component {
     render() {
         return(
             <div>
-                <div>
-                    <nav>
-                    <h1 className="store-header">Bookr</h1>
-                    <div className="nav-links">
-                    <div>
-                        <NavLink to="/"> Home </NavLink>
-                        </div>
-                        <div>
-                        <NavLink to="/home"> Books </NavLink>
-                        </div>
-                    </div>
-                    </nav>
-                </div>
-
+                
                 <div className="App">
                     <div>
                     <header>
