@@ -11,7 +11,7 @@ import {
 
 import { connect } from "react-redux";
 
-import { getBooks, getReviews, giveReviews } from './../actions/index';
+import { getBooks, getReviews, giveReviews, killBook } from './../actions/index';
 import ReviewsList from './ReviewsList';
 
 
@@ -21,6 +21,7 @@ class Item extends React.Component {
 
         this.state ={
             reviews: props.reviews,
+            itemey: {},
             newReview: {
                 review: '',
                 reviewer: 'Me',
@@ -56,18 +57,27 @@ class Item extends React.Component {
         });
       };
 
+      goKillbook = event => {
+        //event.preventDefault();
+        this.props.killBook(this.state.itemey)
+        this.props.history.push('/home')
+      }
+
     render(){
 
         const items = this.props.books;
 
         const item = items.find(thing => `${thing.id}` === this.props.match.params.id);
 
+        if (!item) return <h2>No book here... bye, Felicia. </h2>;
+
         const reviews = this.props.reviews;
 
         const revResult = reviews.filter(rev => rev.books_id === item.id);
 
-        //console.log(this.props.reviews);
-        console.log(revResult);
+        this.state.itemey = item;
+        //console.log(item);
+        //console.log(this.state.itemey);
         
         if (!item) return <h2>No item here... bye, Felicia. </h2>;
 
@@ -94,7 +104,7 @@ class Item extends React.Component {
                 <div>
                     <form onSubmit={this.goReview}>
                         <p>
-                        Add New Review
+                        Add New Review, and Rating.
                         </p>
 
                         <input
@@ -104,6 +114,18 @@ class Item extends React.Component {
                         onChange={this.handleChange}
                         value={this.state.newReview.review}
                         />
+                        <br></br>
+
+                        <input 
+                        type="number"
+                        name="rating"
+                        value={this.state.newReview.rating}
+                        
+                        onChange={this.handleChange}
+                        min="1"
+                        max="5"
+                        
+                        />
                         
                         <br></br>
                         <button type="submit">
@@ -112,6 +134,13 @@ class Item extends React.Component {
                         
                         
                     </form>
+                </div>
+
+                <div>
+                    <h3>Delete this book?</h3>
+                    <button onClick={e => {this.goKillbook()}}>DELETE BOOK</button>
+                    <p></p>
+                    <p></p>
                 </div>
 
           </div>
@@ -129,4 +158,4 @@ const mapStoreToProps = state => {
     };
   };
   
-  export default connect (mapStoreToProps, { getBooks, getReviews, giveReviews })(Item) ;
+  export default connect (mapStoreToProps, { getBooks, getReviews, giveReviews, killBook })(Item) ;

@@ -27,6 +27,10 @@ export const NEWBOOK_FAIL = 'NEWBOOK_FAIL';
 export const NEWBOOK_START = 'NEWREVIEW_START';
 export const NEWBOOK_SUCCESS = 'NEWBOOK_SUCCESS';
 
+export const KILLBOOK_START = 'KILLBOOK_START';
+export const KILLBOOK_SUCCESS = 'KILLBOOK_SUCCESS';
+export const KILLBOOK_FAIL = 'KILLBOOK_FAIL';
+
 export const loginAction = userinfo => dispatch => {
     dispatch ({
         type: LOGIN_START
@@ -189,3 +193,31 @@ export const goNewBook = book => dispatch => {
     })
 }
 
+//
+export const killBook = book => dispatch => {
+    dispatch ({
+        type: KILLBOOK_START
+    })
+    
+    demoAPI
+
+    .delete (`books/${book.id}`)
+    
+    .then (res => {
+        console.log(res)
+        dispatch({
+            type: KILLBOOK_SUCCESS,
+            payload: res
+        })
+    })
+
+        
+    .catch(err => {
+        console.log(err)
+        dispatch ({
+            type: KILLBOOK_FAIL,
+            payload: err
+        })
+    })
+
+}
