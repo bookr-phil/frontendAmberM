@@ -74,44 +74,58 @@ class Item extends React.Component {
 
         return(
             <div>
-            <div >
-                <p></p>
-                <h2>{item.title}</h2>
-                <h4>Written By: {item.author}</h4>
-                <p></p>
-                <h5>Published by: {item.publisher}</h5>
-                <p>Summary: {item.summary}</p>
-            </div>
+                <div>
+                    <nav>
+                    <h1 className="store-header">Bookr</h1>
+                    <div className="nav-links">
+                    <div>
+                        <NavLink to="/"> Home </NavLink>
+                        </div>
+                        <div>
+                        <NavLink to="/home"> Books </NavLink>
+                        </div>
+                    </div>
+                    </nav>
+                </div>
 
-            <div>
-                <h3>Reviews</h3>
-                <p>------------------</p>
-                <ReviewsList reviewsey={revResult}/>
+                <div >
+                    <p></p>
+                    <h2>{item.title}</h2>
+                    <h4>Written By: {item.author}</h4>
+                    <p></p>
+                    <h5>Published by: {item.publisher}</h5>
+                    <p>Summary: {item.summary}</p>
+                </div>
 
-            </div>
+                <div>
+                    <h3>Reviews</h3>
+                    <p>------------------</p>
+                    <ReviewsList reviewsey={revResult}/>
 
-            <div>
-                <form onSubmit={this.goReview}>
-                    <p>
-                    Add New Review
-                    </p>
+                </div>
 
-                    <input
-                    type="text"
-                    name="review"
-                    placeholder="Review This book"
-                    onChange={this.handleChange}
-                    value={this.state.newReview.review}
-                    />
-                    
-                    <br></br>
-                    <button type="submit">
-                    ADD REVIEW
-                    </button>
-                    
-                    
-                </form>
-            </div>
+                <div>
+                    <form onSubmit={this.goReview}>
+                        <p>
+                        Add New Review
+                        </p>
+
+                        <input
+                        type="text"
+                        name="review"
+                        placeholder="Review This book"
+                        onChange={this.handleChange}
+                        value={this.state.newReview.review}
+                        />
+                        
+                        <br></br>
+                        <button type="submit">
+                        ADD REVIEW
+                        </button>
+                        
+                        
+                    </form>
+                </div>
 
           </div>
         )

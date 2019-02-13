@@ -24,24 +24,40 @@ class BookMain extends React.Component {
 
     render() {
         return(
-            <div className="App">
             <div>
-              <header>
-                <h1>Bookr Header</h1>   
-                <h3>Booklist Goes Here</h3>  
-                <p>--------------------</p>
-              </header>
-            </div>
+                <div>
+                    <nav>
+                    <h1 className="store-header">Bookr</h1>
+                    <div className="nav-links">
+                    <div>
+                        <NavLink to="/"> Home </NavLink>
+                        </div>
+                        <div>
+                        <NavLink to="/home"> Books </NavLink>
+                        </div>
+                    </div>
+                    </nav>
+                </div>
 
-            <div className='books'>
-            
-            <div>
-                {this.props.books.map(item => {
-                    return <BookTile item={item} key={item.id} />
-                    })}
+                <div className="App">
+                    <div>
+                    <header>
+                        <h1>Bookr Header</h1>   
+                        <h3>Booklist Goes Here</h3>  
+                        <p>--------------------</p>
+                    </header>
+                    </div>
+
+                    <div className='books'>
+                    
+                        <div>
+                            {this.props.books.map(item => {
+                                return <BookTile item={item} key={item.id} />
+                                })}
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-          </div>
         )
     }
 }
