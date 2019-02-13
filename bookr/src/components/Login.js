@@ -45,7 +45,13 @@ class Login extends React.Component {
         
       }
 
-render () {
+      handleLogin = e => {
+        e.preventDefault()
+        this.props.userLogin(this.state.inputLogin)
+        this.props.history.push('/')
+    }
+
+  render () {
     return (
       <div className="App">
         
@@ -89,7 +95,10 @@ render () {
             )}</div>
 
             <div>{!this.props.isLoggedIn && (
+              <div>
               <h2>Hey, you're NOT logged In!</h2>
+              <p>If you need to register, go <Link to={'/register'}>HERE</Link></p>
+              </div>
             )}</div>
 
           </div>

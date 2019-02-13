@@ -92,12 +92,15 @@ render () {
               /> */}
               
 
-            <p>{this.props.isLoggedIn && (
-              <h2>Hey, you're LOGGED In!</h2>
+            <p>{this.props.isRegistered && (
+              <div>
+              <h2>Hey, you're Registered!</h2>
+              <p>Go Back and Login with your new information! <Link to={'/'}>HERE !</Link></p>
+              </div>
             )}</p>
 
-            <p>{this.props.isLoggedIn && (
-              <h2>Hey, you're NOT logged In!</h2>
+            <p>{!this.props.isRegistered && (
+              <h2>Register with your new name and password!</h2>
             )}</p>
 
           </div>
