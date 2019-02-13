@@ -5,11 +5,13 @@ import { register } from './registerReducer';
 
 import {books} from './books';
 import { reviews } from './reviews';
+import { newbook } from './newbook';
 
 
 export default combineReducers({
   login,
   register,
   books,
-  reviews
+  reviews,
+  newbook
 });

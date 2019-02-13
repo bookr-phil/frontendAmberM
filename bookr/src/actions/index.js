@@ -23,6 +23,10 @@ export const NEWREVIEW_START = 'NEWREVIEW_START';
 export const NEWREVIEW_SUCCESS = 'NEWREVIEW_SUCCESS';
 export const NEWREVIEW_FAIL = 'NEWREVIEW_FAIL';
 
+export const NEWBOOK_FAIL = 'NEWBOOK_FAIL';
+export const NEWBOOK_START = 'NEWREVIEW_START';
+export const NEWBOOK_SUCCESS = 'NEWBOOK_SUCCESS';
+
 export const loginAction = userinfo => dispatch => {
     dispatch ({
         type: LOGIN_START
@@ -39,7 +43,7 @@ export const loginAction = userinfo => dispatch => {
             type: LOGIN_SUCCESS,
             payload: res
         })
-       
+        //this.props.history.push('/home')
     })
   
     .catch(err => {
@@ -154,6 +158,32 @@ export const giveReviews = rev => dispatch => {
         console.log(err)
         dispatch({
             type: NEWREVIEW_FAIL,
+            payload: err.data
+        })
+    })
+}
+
+export const goNewBook = book => dispatch => {
+    dispatch({
+        type: NEWBOOK_START
+    })
+
+    demoAPI
+
+    .post ('books', book)
+    
+    .then (res => {
+        console.log(res)
+        dispatch({
+            type: NEWBOOK_SUCCESS,
+            payload: res.data
+        })
+    })
+
+    .catch(err => {
+        console.log(err)
+        dispatch({
+            type: NEWBOOK_FAIL,
             payload: err.data
         })
     })

@@ -42,14 +42,13 @@ class Login extends React.Component {
       gogoLogin = event => {
         event.preventDefault();
         this.props.loginAction(this.state.user);
-        
+        setTimeout(() => {
+          if (this.props.isLoggedIn) {
+            this.props.history.push('/home')
+          } }, 4700);
       }
 
-      handleLogin = e => {
-        e.preventDefault()
-        this.props.userLogin(this.state.inputLogin)
-        this.props.history.push('/')
-    }
+      
 
   render () {
     return (
@@ -91,7 +90,10 @@ class Login extends React.Component {
               
 
             <div>{this.props.isLoggedIn && (
-              <h2>Hey, you're LOGGED In!</h2>
+              <div>
+              <h2>Hey, you're already LOGGED In!</h2>
+              <p>Go to the main Bookr page <Link to={'/home'}>HERE!</Link></p>
+              </div>
             )}</div>
 
             <div>{!this.props.isLoggedIn && (

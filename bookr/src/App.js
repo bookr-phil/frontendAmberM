@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Register from './components/register';
 import BookMain from './components/BooksMain';
 import Item from './components/Item';
+import AddBook from './components/AddBook';
 
 
 class App extends Component {
@@ -38,6 +39,9 @@ class App extends Component {
                   <div>
                   <NavLink to="/home"> Books </NavLink>
                   </div>
+                  <div>
+                  <NavLink to="/newbook"> Add New Book </NavLink>
+                  </div>
               </div>
               </nav>
             </div>
@@ -54,6 +58,7 @@ class App extends Component {
           <Route path="/register" component={Register} />
           <Route exact path="/home" component= {BookMain} />
           <Route path="/home/:id" component={Item} />
+          <Route exact path="/newbook" component={AddBook} />
           
         </div>
       </div>
