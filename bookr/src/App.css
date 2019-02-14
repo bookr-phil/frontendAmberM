@@ -67,7 +67,7 @@ table {
 .itemImage {
   height: 85%;
   width: 85%;
-  box-shadow: 7px 7px;
+  box-shadow: 7px 7px rgb(75, 49, 40);
   border: 5px;
   display:flex;
   justify-content: space-around;
@@ -106,7 +106,7 @@ table {
   
   width: 48%;
   margin-top: 16px;
-  border: 1px solid #865331;
+  border: 1px solid rgb(196,73,58);
   
   padding: 8px;
   margin: 5px;
@@ -122,7 +122,7 @@ table {
   
   width: 30%;
   margin-top: 16px;
-  border: 1px solid black;
+  border: 1px solid rgb(196,73,58);
   
   padding: 8px;
   margin: auto;
@@ -146,8 +146,8 @@ table {
 
 .reviewItem {
   width: 75%;
-  box-shadow: 4px 4px;
-  border: 1px solid #865331;
+  box-shadow: 4px 4px rgb(145,113,100);
+  border: 1px solid rgb(199,73,58);
   padding: 5px;
   margin: 8px;
 }
@@ -168,14 +168,20 @@ table {
   justify-items: center;
   align-items: center;
   align-content: center;
-  
+  color: rgb(129, 42, 31);
+  text-decoration: none;
   width: 30%;
   margin-top: 16px;
-  border: 2px solid gray;
+  border: 2px solid rgb(196,73,58);
   
   padding: 8px;
   margin: 5px;
 
+}
+
+.cards-container a {
+  text-decoration: none;
+  color: rgb(199,73,58);
 }
 
 .books {
@@ -200,7 +206,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 5px 16px;
-  border-bottom: 1px solid #2257ca;
+  border-bottom: 2px solid rgb(199,73,58);
   margin-bottom: 32px;
 }
 
@@ -212,19 +218,22 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: #1c5d76;
+  color: rgb(146, 39, 27);
   font-weight: bold;
   margin-right: 8px;
 }
 
-
+.topColor {
+  background-color: rgb(102,149,115);
+}
 
 .nav-links a.active {
-  border-bottom: 1px solid #1c5d76;
+  border-bottom: 1px solid rgb(114, 36, 25);
 }
 
 .base-header {
-  color: #1c5d76;
+  color: rgb(155, 51, 39);
+  
 }
 
 .App-header {

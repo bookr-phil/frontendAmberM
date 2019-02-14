@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="topColor">
           <header>
             <div>
               <nav>
