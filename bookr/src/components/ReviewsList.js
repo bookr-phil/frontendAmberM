@@ -40,9 +40,9 @@ class ReviewsList extends React.Component {
 
         return(
             <div>
-                <div >
+                <div className="itemDisplay">
                     {this.props.reviewsey.map(rev => {
-                        return <div>
+                        return <div className ="reviewItem">
                         <p>{rev.review}</p>
                         <h5>By: {rev.reviewer}</h5>
                         <h5>Rating: {rev.rating}</h5>
@@ -51,11 +51,7 @@ class ReviewsList extends React.Component {
                     }) }
                 </div>
 
-                <div>
-                    <h3></h3>
-                    
-
-                </div>
+                
 
              </div>
         )

@@ -52,7 +52,7 @@ class Item extends React.Component {
     render(){
 
         return(
-            <div>
+            <div className ='itemDisplay3'>
                 
                 <div>
                     <h3>New Book Entry</h3>

@@ -11,6 +11,8 @@ import {
 import { connect } from "react-redux";
 import { getBooks } from './../actions/index';
 import BookTile from './BookTile';
+import ImageMain from './ImageMain.jpg';
+import ImageMain2 from './ImageMain2.jpg';
 
 class BookMain extends React.Component {
     constructor() {
@@ -26,13 +28,11 @@ class BookMain extends React.Component {
         return(
             <div>
                 
-                <div className="">
-                    <div>
-                    <header>
-                        <h1>Bookr Header</h1>   
-                        <h3>Booklist Goes Here</h3>  
-                        <p>--------------------</p>
-                    </header>
+                <div >
+                    <div className="itemDisplay4">
+                    
+                        <img className="super" src={ImageMain2} />
+                    
                     </div>
 
                     <div >

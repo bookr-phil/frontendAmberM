@@ -91,27 +91,38 @@ class Item extends React.Component {
 
         return(
             <div>
-                <div>
-                    <img className="itemImage" src={Image0} />
-                </div>
-                
-                <div >
-                    <p></p>
-                    <h2>{item.title}</h2>
-                    <h4>Written By: {item.author}</h4>
-                    <p></p>
-                    <h5>Published by: {item.publisher}</h5>
-                    <p>Summary: {item.summary}</p>
-                </div>
 
-                <div>
-                    <h3>Reviews</h3>
-                    <p>------------------</p>
+                <div className="itemDisplay">
+
+                    <div className="itemDisplay1">
+                        <img className="itemImage" src={Image0} />
+                    </div>
+                    
+                    <div className="itemDisplay2">
+                        
+                        
+                        <h2>{item.title}</h2>
+                        
+                        <h4>Written By: {item.author}</h4>
+                        
+                        <h5>Published by: {item.publisher}</h5>
+                        <p>Summary:<br></br> {item.summary}</p>
+                    </div>
+
+                </div>
+                <br></br>
+                <br></br>
+                <div className="itemDisplay">
+                <h3>-READER REVIEWS-</h3>
+                </div>
+                <div >
+                    {/* <h3>Reviews</h3>
+                    <p>------------------</p> */}
                     <ReviewsList reviewsey={revResult}/>
 
                 </div>
 
-                <div>
+                <div className="itemDisplay">
                     <form onSubmit={this.goReview}>
                         <p>
                         Add New Review, and Rating.
@@ -146,15 +157,24 @@ class Item extends React.Component {
                     </form>
                 </div>
 
-                <div>
-                    <h3>Delete this book?</h3>
-                    <button onClick={e => {this.goKillbook()}}>DELETE BOOK</button>
-                    <p></p>
-                    <p></p>
+                <div className="itemDisplay">
+                    <br></br>
+                    <br></br>
+                    <h3><br></br>Delete this book?</h3>
+                    <br></br>
+                    
+                    <br></br>
+                    <br></br>
                 </div>
 
-                <div>
+                <div className="itemDisplay">
+                    <br></br>
+                    <br></br>
+                    
+                    <br></br>
                     <Modaley itemey={item}/>
+                    <br></br>
+                    <br></br>
                 </div>
 
           </div>

@@ -66,7 +66,7 @@ const customStyles = {
     render() {
       return (
         <div>
-          <button onClick={this.openModal}>Open Modal</button>
+          <button onClick={this.openModal}>Delete Book !</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
