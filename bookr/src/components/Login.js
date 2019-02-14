@@ -49,7 +49,7 @@ class Login extends React.Component {
         setTimeout(() => {
           if (this.props.isLoggedIn) {
             this.props.history.push('/home')
-          } }, 4700);
+          } }, 4200);
       }
 
       
@@ -91,9 +91,13 @@ class Login extends React.Component {
             
           </form>
 
-          
-              
+          <div>{this.props.LoggingIn && (
+                <div className="itemDisplay6 loader">
+                  
+                </div>
+              )}</div>
 
+            
             <div>{this.props.isLoggedIn && (
               <div>
               <h2>Hey, you're already LOGGED In!</h2>
@@ -114,6 +118,7 @@ class Login extends React.Component {
         
         <div className="itemDisplay">
               <br></br>
+              
           <img className="itemDisplay6" src={ImageMain} />
         </div>
 
