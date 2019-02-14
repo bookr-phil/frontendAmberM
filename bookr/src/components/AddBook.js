@@ -61,7 +61,12 @@ class Item extends React.Component {
 
     render(){
 
-      if (!this.props.isLoggedIn) return <h2>--Yo, dog.  You ain't logged in.  Do That <Link to="/">HERE</Link> </h2>;
+      if (!this.props.isLoggedIn) return (
+        <div>
+        <h2 className="itemDisplay">--Yo, dog.  You ain't logged in.  Do That</h2>
+        <h1 className="itemDisplay"><Link to="/">HERE</Link></h1>
+        </div>
+      )
 
         return(
             <div className ='itemDisplay3'>
