@@ -26,14 +26,17 @@ class BookTile extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="cards-container">
                 <NavLink to={`/home/${this.state.book.id}`}>
             
-                    <div className="bookbox">
-                    <h2>{this.props.item.title}</h2>
-                    <h4>By: {this.props.item.author}</h4>
-                    <p></p>
-                    <h5>{this.props.item.publisher}</h5>
+                    <div>
+                        
+                        <h2>{this.props.item.title}</h2>
+                        
+                        <h4>By: {this.props.item.author}</h4>
+                        
+                        <p></p>
+                        <h5>{this.props.item.publisher}</h5>
                     </div>
 
                 </NavLink>

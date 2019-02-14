@@ -1,24 +1,45 @@
 .App {
   
   text-align: center;
-  justify-content: center;
+  
   align-items: center;
   max-width: 1000px;
 }
 
+.content-container {
+  display: flex; 
+  width: 90%;
+  justify-content: space-evenly;
+  
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 16px;
+  border: 2px solid red;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
 .books {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  
+  justify-content: space-between;
+ 
   
 }
 
 .bookbox {
   text-align: center;
   padding: 10px;
-  width: 100%;
-  height: 150px;
+  width: 31%;
+  height: 180px;
   border: 2px solid red;
   margin: 8px auto;
 }
@@ -70,11 +91,4 @@ nav {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

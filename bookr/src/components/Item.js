@@ -46,7 +46,7 @@ class Item extends React.Component {
         event.preventDefault();
         
         this.props.giveReviews(this.state.newReview);
-        
+                
       }
 
     handleChange = e => {

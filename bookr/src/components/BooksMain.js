@@ -26,7 +26,7 @@ class BookMain extends React.Component {
         return(
             <div>
                 
-                <div className="App">
+                <div className="">
                     <div>
                     <header>
                         <h1>Bookr Header</h1>   
@@ -35,9 +35,9 @@ class BookMain extends React.Component {
                     </header>
                     </div>
 
-                    <div className='books'>
+                    <div >
                     
-                        <div>
+                        <div className='content-container'>
                             {this.props.books.map(item => {
                                 return <BookTile item={item} key={item.id} />
                                 })}
