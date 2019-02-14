@@ -9,6 +9,10 @@ import {
   withRouter
 } from "react-router-dom";
 
+import Image0 from './Image1.jpg';
+import Image1 from './Image2.jpg';
+import Image2 from './Image3.jpg';
+
 //import Modal from 'react-modal';
 
 import { connect } from "react-redux";
@@ -87,6 +91,9 @@ class Item extends React.Component {
 
         return(
             <div>
+                <div>
+                    <img className="itemImage" src={Image0} />
+                </div>
                 
                 <div >
                     <p></p>

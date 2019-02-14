@@ -6,6 +6,14 @@
   max-width: 1000px;
 }
 
+.mainImg {
+  width:85%;
+}
+
+.itemImage {
+  width: 50%;
+}
+
 .content-container {
   display: flex; 
   width: 90%;
@@ -16,15 +24,20 @@
 }
 
 .cards-container {
+  text-align: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  justify-items: center;
   align-items: center;
-  flex-direction: column;
+  align-content: center;
+  
   width: 30%;
   margin-top: 16px;
   border: 2px solid red;
-  flex-wrap: wrap;
+  
+  padding: 8px;
   margin: 5px;
+
 }
 
 .books {
