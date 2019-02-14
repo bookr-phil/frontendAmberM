@@ -26,11 +26,7 @@ const widget2 = `Image${widget1}`;
 
 // try numero 2
 
-var myPix = new Array({Image0},{Image1},{Image2});
 
-var randomPic = Math.floor(Math.random() * myPix.length)
-
-console.log(myPix[randomPic]);
 
 const piccy = {Image1};
 function picThing() {
@@ -40,13 +36,25 @@ function picThing() {
 
 
 class BookTile extends React.Component {
+
+
+    myPix = new Array({Image0},{Image1},{Image2});
+
+    randomPic = Math.floor(Math.random() * this.myPix.length)
+
+    
+
+    imageObj = this.myPix[this.randomPic];
+    imagekey = Object.keys(this.imageObj)[0]
+
+    
     
     constructor(props) {
         super(props)
 
         this.state = {
             book: this.props.item,
-            bookImg: myPix[randomPic]
+            bookImg: this.myPix[this.randomPic]
         }
     }
 
@@ -56,7 +64,7 @@ class BookTile extends React.Component {
                 <NavLink to={`/home/${this.state.book.id}`}>
             
                     <div>
-                        <img className="mainImg" src={Image2} />
+                        <img className="mainImg" src={this.imageObj[this.imagekey]} />
                         <h2>{this.props.item.title}</h2>
                         
                         <h4>By: {this.props.item.author}</h4>
