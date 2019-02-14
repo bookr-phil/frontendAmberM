@@ -25,6 +25,9 @@ class BookMain extends React.Component {
     }
 
     render() {
+
+        //if (!this.props.isLoggedIn) return <h2>--Yo, dog.  You ain't logged in.  Do That <Link to="/">HERE</Link> </h2>;
+
         return(
             <div>
                 
@@ -53,7 +56,7 @@ const mapStoreToProps = state => {
     return {
       user: state.login.user,
       error: state.books.error,
-      isLoggedIn: state.isLoggedIn,
+      isLoggedIn: state.login.isLoggedIn,
       books: state.books.books
     };
   };

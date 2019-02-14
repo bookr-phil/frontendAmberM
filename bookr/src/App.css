@@ -81,7 +81,7 @@ table {
   width: 90%;
   height: auto;
   justify-content: space-evenly;
-  
+  color: rgb(196,73,58);
   flex-wrap: wrap;
   margin: auto;
 
@@ -94,6 +94,7 @@ table {
   margin-top:  5%;
   justify-content: center;
   align-content: center;
+  color: rgb(196,73,58);
 }
 
 .itemDisplay2 {
@@ -106,8 +107,8 @@ table {
   
   width: 48%;
   margin-top: 16px;
-  border: 1px solid rgb(196,73,58);
-  
+  border: 1px solid rgb(102,149,115);
+  color: rgb(196,73,58);
   padding: 8px;
   margin: 5px;
 }
@@ -119,13 +120,15 @@ table {
   justify-items: center;
   align-items: center;
   align-content: center;
-  
+  color: rgb(102,149,115);
+  border-radius: 8px;
   width: 30%;
   margin-top: 16px;
-  border: 1px solid rgb(196,73,58);
+  border: 2px solid rgb(196,73,58);
   
   padding: 8px;
   margin: auto;
+  margin-bottom: 15px;
 }
 
 .itemDisplay4 {
@@ -139,9 +142,21 @@ table {
   margin-bottom: 18px;
 }
 
+.itemDisplay6 {
+  display: flex; 
+  width: 90%;
+  height: auto;
+  justify-content: space-evenly;
+  color: rgb(196,73,58);
+  flex-wrap: wrap;
+  margin: auto;
+  border-radius: 8px;
+}
+
 .super {
   width:95%;
-  
+  border-radius: 8px;
+
 }
 
 .reviewItem {
@@ -150,6 +165,7 @@ table {
   border: 1px solid rgb(199,73,58);
   padding: 5px;
   margin: 8px;
+  color: rgb(102,149,115);
 }
 
 .content-container {
@@ -173,7 +189,7 @@ table {
   width: 30%;
   margin-top: 16px;
   border: 2px solid rgb(196,73,58);
-  
+  border-radius: 8px;
   padding: 8px;
   margin: 5px;
 

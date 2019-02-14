@@ -36,6 +36,16 @@ class Item extends React.Component {
     goReview = event => {
         event.preventDefault();
         this.props.goNewBook(this.state.newBook);
+
+        this.setState({
+          newBook: {
+            title: '',
+            author: '',
+            publisher: '',
+            summary: ""
+        }
+
+        })
       }
 
     handleChange = e => {
@@ -50,6 +60,8 @@ class Item extends React.Component {
       };
 
     render(){
+
+      if (!this.props.isLoggedIn) return <h2>--Yo, dog.  You ain't logged in.  Do That <Link to="/">HERE</Link> </h2>;
 
         return(
             <div className ='itemDisplay3'>
@@ -113,6 +125,15 @@ class Item extends React.Component {
 
                 <div>
 
+                  <div>{this.props.madeNewBook && (
+                    <div>
+                    <h2>Hey, you ADDED a NEW BOOK!</h2>
+                    <p>Go to the main Bookr page <Link to={'/home'}>HERE!</Link></p>
+                    </div>
+                  )}</div>
+
+                  
+
                 </div>
 
           </div>
@@ -124,7 +145,7 @@ const mapStoreToProps = state => {
     return {
       user: state.login.user,
       error: state.books.error,
-      isLoggedIn: state.isLoggedIn,
+      isLoggedIn: state.login.isLoggedIn,
       makingNewBook: state.newbook.makingNewBook,
       madeNewBook: state.newbook.madeNewBook
     };

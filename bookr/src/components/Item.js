@@ -31,7 +31,7 @@ class Item extends React.Component {
             itemey: {},
             newReview: {
                 review: '',
-                reviewer: 'Me',
+                reviewer: window.localStorage.getItem('user'),
                 rating: 0,
                 books_id: this.props.match.params.id
             }
@@ -50,6 +50,8 @@ class Item extends React.Component {
         event.preventDefault();
         
         this.props.giveReviews(this.state.newReview);
+
+        this.setTimeout((window.location.reload()),800)
                 
       }
 
@@ -122,7 +124,7 @@ class Item extends React.Component {
 
                 </div>
 
-                <div className="itemDisplay">
+                <div className="itemDisplay3">
                     <form onSubmit={this.goReview}>
                         <p>
                         Add New Review, and Rating.

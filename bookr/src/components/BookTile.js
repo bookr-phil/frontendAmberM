@@ -32,6 +32,11 @@ var randomPic = Math.floor(Math.random() * myPix.length)
 
 console.log(myPix[randomPic]);
 
+const piccy = {Image1};
+function picThing() {
+    
+}
+
 
 
 class BookTile extends React.Component {

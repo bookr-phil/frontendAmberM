@@ -13,6 +13,7 @@ import {
   import { connect } from "react-redux";
   
   import {loginAction} from '../actions';
+  import ImageMain from './ImageMain.jpg';
 
 class Login extends React.Component {
     constructor() {
@@ -42,6 +43,9 @@ class Login extends React.Component {
       gogoLogin = event => {
         event.preventDefault();
         this.props.loginAction(this.state.user);
+
+        window.localStorage.setItem('user', this.state.user.username);
+
         setTimeout(() => {
           if (this.props.isLoggedIn) {
             this.props.history.push('/home')
@@ -52,6 +56,7 @@ class Login extends React.Component {
 
   render () {
     return (
+      <div>
       <div className="itemDisplay3">
         
           <div>
@@ -105,7 +110,12 @@ class Login extends React.Component {
 
           </div>
 
-          
+        </div>
+        
+        <div className="itemDisplay">
+              <br></br>
+          <img className="itemDisplay6" src={ImageMain} />
+        </div>
 
         </div>
     );

@@ -47,7 +47,7 @@ const customStyles = {
   
     afterOpenModal() {
       // references are now sync'd and can be accessed.
-      this.subtitle.style.color = '#f00';
+      this.subtitle.style.color = '#8ee4af';
     }
   
     closeModal() {
