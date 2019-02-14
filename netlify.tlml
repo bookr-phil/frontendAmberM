@@ -1,3 +1,0 @@
-base=“bookr”
-publish=“booker/build”
-command=“yarn build”
